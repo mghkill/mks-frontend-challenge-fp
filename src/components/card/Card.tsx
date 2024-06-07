@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Product from "../../types/Types";
 import {
   StyledCard,
@@ -10,6 +10,7 @@ import {
   StyledTypographyDescription,
   StyledSpanPrice,
 } from "./StyleCard";
+import { CartContext } from "../../stores/productStore/productStore.tsx";
 
 // @ts-ignore
 import { ReactComponent as ShoppingBagSVG } from "../../assets/img/shoppingBag.svg";
@@ -29,6 +30,11 @@ const getPriceWithoutDecimal = (price: number) => {
 };
 
 const Card: React.FC<CardProps> = ({ element }) => {
+  const { addToCart, removeFromCart } = useContext(CartContext);
+
+  const handleProduct = (element: Product) => {
+    addToCart(element);
+  };
   return (
     <StyledCard>
       <StyledCardMedia
@@ -50,11 +56,21 @@ const Card: React.FC<CardProps> = ({ element }) => {
       <StyledTypographyDescription variant="body1" gutterBottom>
         {element.description}
       </StyledTypographyDescription>
-      <StyledButton variant="contained" color="primary">
+      <StyledButton
+        onClick={() => handleProduct(element)}
+        variant="contained"
+        color="primary"
+      >
         <Grid sx={{ p: 1, pt: 1.6 }}>
           <ShoppingBagSVG />
         </Grid>
         COMPRAR
+      </StyledButton>
+      <StyledButton onClick={() => removeFromCart(element)} variant="contained" color="primary">
+        <Grid sx={{ p: 1, pt: 1.6 }}>
+          <ShoppingBagSVG />
+        </Grid>
+        deleteTeste
       </StyledButton>
     </StyledCard>
   );

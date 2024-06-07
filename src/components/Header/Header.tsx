@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
+import { CartContext } from "../../stores/productStore/productStore.tsx";
 
 // @ts-ignore
 import { ReactComponent as CartSvg } from "../../assets/img/cart.svg";
@@ -12,11 +13,14 @@ import {
   CartContainer,
 } from "./StyleHeader";
 
-interface HeaderProps {
-  cartItemCount: number;
-}
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({ cartItemCount }) => {
+const Header: React.FC<HeaderProps> = () => {
+  
+  const { cart } = useContext(CartContext);
+
+  const cartItemCount = cart.length;
+
   return (
     <StyledContainer container alignItems="center">
       <LogoContainer>

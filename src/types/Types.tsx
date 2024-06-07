@@ -4,4 +4,5 @@ export default interface Product {
     price: number;
     photo: string; 
     description: string;
+    cart: any
   }

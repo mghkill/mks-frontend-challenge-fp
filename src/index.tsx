@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import GlobalStyles from "./GlobalStyles.ts";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Providers } from "./stores/productStore/products/index.js";
 
 const queryClient = new QueryClient();
 const root = document.getElementById("root");
@@ -15,10 +16,12 @@ const rootInstance = createRoot(root);
 const render = () => {
   rootInstance.render(
     <React.StrictMode>
-      <GlobalStyles />
-      <QueryClientProvider client={queryClient}>
-        <App />
-      </QueryClientProvider>
+      <Providers>
+        <GlobalStyles />
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </Providers>
     </React.StrictMode>
   );
 };
