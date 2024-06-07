@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export const StyledContainer = styled(Grid)`
   background-color: #0f52ba !important;
@@ -15,7 +15,7 @@ export const StyledContainer = styled(Grid)`
   }
 `;
 
-export const LogoContainer = styled(Typography)`
+export const LogoContainer = styled(Grid)`
   font-family: "Montserrat", sans-serif !important;
   font-size: 40px !important;
   font-weight: 600 !important;
@@ -28,7 +28,7 @@ export const LogoContainer = styled(Typography)`
   }
 `;
 
-export const SystemsTypography = styled(Typography)`
+export const SystemsTypography = styled(Grid)`
   font-family: "Montserrat", sans-serif !important;
   font-size: 16px !important;
   font-weight: 300 !important;

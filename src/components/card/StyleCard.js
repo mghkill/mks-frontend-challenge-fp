@@ -10,8 +10,8 @@ import {
 export const StyledCard = styled(Card)`
   width: 218px;
   height: auto;
-  box-shadow: 0px 2px 8px 0px #00000022;
-  border-radius: 8px;
+  box-shadow: 0px 2px 8px 0px #00000022 !important;
+  border-radius: 10px !important;
   display: flex;
   flex-direction: column;
   align-items: center;

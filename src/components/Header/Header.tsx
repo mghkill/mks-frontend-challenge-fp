@@ -1,6 +1,9 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
+
+// @ts-ignore
 import { ReactComponent as CartSvg } from "../../assets/img/cart.svg";
+
 import { Typography } from "@mui/material";
 import {
   StyledContainer,

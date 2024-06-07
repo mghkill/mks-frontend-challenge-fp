@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../../types/Types.tsx";
+import Product from "../../types/Types";
 import {
   StyledCard,
   StyledCardContent,
@@ -9,15 +9,18 @@ import {
   StyledTypographyPrice,
   StyledTypographyDescription,
   StyledSpanPrice,
-} from "./StyleCard.js";
-import { ReactComponent as ShoppingBagSVG } from "../../assets/img/shopping-bag.svg";
+} from "./StyleCard";
+
+// @ts-ignore
+import { ReactComponent as ShoppingBagSVG } from "../../assets/img/shoppingBag.svg";
+
 import { Grid } from "@mui/material";
 
 interface CardProps {
   element: Product;
 }
 
-const getPriceWithoutDecimal = (price: any) => {
+const getPriceWithoutDecimal = (price: number) => {
   const formattedPrice = Number(price)
     .toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
     .split(",")[0];
