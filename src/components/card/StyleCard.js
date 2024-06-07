@@ -56,6 +56,7 @@ export const StyledTypographyPrice = styled(Typography)`
 `;
 
 export const StyledSpanPrice = styled(Typography)`
+  font-family: "Montserrat", sans-serif !important;
   background-color: #373737;
   color: #ffffff;
   padding: 2px;
