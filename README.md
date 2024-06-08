@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Teste Prático - Desenvolvedor(a) Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologias Utilizadas
 
-## Available Scripts
+- **Página do teste deploy**: [Link para a página de deploy](https://mkstestefilipemelo.netlify.app/)
 
-In the project directory, you can run:
+- **TypeScript**: Optei por utilizar TypeScript para trazer mais segurança e clareza ao código, garantindo uma melhor manutenção e escalabilidade do projeto.
 
-### `yarn start`
+- **React**: Utilizei o framework React como base para o desenvolvimento da aplicação, aproveitando sua eficiência e reatividade para criar uma experiência dinâmica e responsiva.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React-query**: Integrei o React-query para gerenciamento de estados assíncronos, permitindo uma comunicação eficiente com a API e uma experiência de usuário mais fluída.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Styled-components**: Adotei o Styled-components para a estilização dos componentes, permitindo uma abordagem mais modular e fácil de manter o estilo da aplicação.
 
-### `yarn test`
+- **Framer-motion**: Utilizei o Framer-motion para adicionar animações elegantes e responsivas, enriquecendo a experiência do usuário e tornando a interface mais atraente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Jest**: Implementei testes unitários com o Jest para garantir a qualidade e robustez do código, assegurando que a aplicação funcione conforme o esperado em diferentes cenários.
 
-### `yarn build`
+- **Material UI**: Como tenho experiência prévia com Material UI, aproveitei alguns componentes e estilos da biblioteca para agilizar o desenvolvimento e manter uma interface coesa e intuitiva.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **ContextAPI**: Utilizei o ContextAPI do React para gerenciar o estado global da aplicação de forma eficiente, facilitando a comunicação entre os componentes e garantindo uma melhor organização do código.
