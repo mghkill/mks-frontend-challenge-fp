@@ -57,6 +57,8 @@ const Card: React.FC<CardProps> = ({ element }) => {
         {element.description}
       </StyledTypographyDescription>
       <StyledButton
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         onClick={() => handleProduct(element)}
         variant="contained"
         color="primary"

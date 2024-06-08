@@ -13,6 +13,7 @@ export const StyledCheckoutCardBox = styled.div`
   border-radius: 8px;
   align-items: center;
   align-content: center;
+  position: relative;
 
   img {
     width: 50px;
@@ -66,7 +67,7 @@ export const PriceTotal = styled.p`
   line-height: 17px;
   margin-top: 4px;
   margin-bottom: 5px;
-  white-space: nowrap
+  white-space: nowrap;
 `;
 
 export const BoxAddRemove = styled.div`
@@ -76,4 +77,31 @@ export const BoxAddRemove = styled.div`
   align-items: center;
   width: 50px;
   margin-right: 10px;
+`;
+
+export const CloseButton = styled.button`
+  background-color: #000000;
+  color: #ffffff;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  position: absolute;
+  margin: -8px;
+  border: none;
+  cursor: pointer;
+`;
+
+export const TotalReduce = styled.span`
+  ont-family: "Montserrat", sans-serif !important;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: left;
+  position: absolute;
+  bottom: 101px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 80%;
+  left: 50px;
 `;

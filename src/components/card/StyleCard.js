@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -77,7 +78,7 @@ export const StyledTypographyDescription = styled(Typography)`
   max-width: 184px;
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(motion(Button))`
   font-family: "Montserrat", sans-serif !important;
   width: 218px;
   height: 31.91px;

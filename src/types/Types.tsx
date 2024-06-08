@@ -5,7 +5,7 @@ export default interface Product {
   brand: string;
   description: string;
   photo: string;
-  price: string;
+  price: number;
   createdAt: string;
   updatedAt: string;
 }

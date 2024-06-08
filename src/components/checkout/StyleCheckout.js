@@ -11,4 +11,3 @@ export const StyledContainer = styled.h1`
 export const ContainerListProduct = styled.div`
   margin: 0 auto;
 `;
-

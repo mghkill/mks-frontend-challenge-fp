@@ -25,17 +25,17 @@ export const StyledHomeContainer = styled(Grid)`
 
   @media (max-width: 600px) {
     flex-direction: column;
-    align-items: center; // Centraliza os itens no modo coluna única
+    align-items: center;  
   }
 
   @media (min-width: 601px) {
     flex-direction: row;
     width: 100%;
-    justify-content: flex-start; // Alinha os itens ao início da linha
+    justify-content: flex-start;  
 
     & > * {
-      flex: 1 1 calc(25% - 20px); // Ajusta o cálculo para melhor espaçamento
-      margin: 10px; // Margem ao redor de cada item
+      flex: 1 1 calc(25% - 20px);  
+      margin: 10px;  
     }
   }
 `;

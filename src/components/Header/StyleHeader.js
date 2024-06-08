@@ -9,7 +9,6 @@ export const StyledContainer = styled(Grid)`
   display: flex;
   justify-content: space-between;
   align-content: center;
-  cursor: pointer;
   @media (max-width: 600px) {
     position: fixed;
     top: 0;
@@ -19,24 +18,24 @@ export const StyledContainer = styled(Grid)`
   }
 `;
 
-export const LogoContainer = styled(Grid)`
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 40px !important;
-  font-weight: 600 !important;
-  line-height: 19px !important;
+export const LogoContainer = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 19px;
   text-align: left;
   display: flex;
   align-items: center;
   @media (max-width: 600px) {
-    font-size: 32px !important;
+    font-size: 32px;
   }
 `;
 
-export const SystemsTypography = styled(Grid)`
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 300 !important;
-  line-height: 19px !important;
+export const SystemsTypography = styled.div`
+  font-family: "Montserrat", sans-serif ;
+  font-size: 16px ;
+  font-weight: 300 ;
+  line-height: 19px ;
   text-align: left;
   padding-left: 8px;
   padding-top: 6px;
@@ -47,6 +46,7 @@ export const CartContainer = styled.div`
   background-color: #ffffff;
   color: black;
   display: flex;
+  cursor: pointer;
   align-items: center;
   padding: 5px;
   width: 90px;

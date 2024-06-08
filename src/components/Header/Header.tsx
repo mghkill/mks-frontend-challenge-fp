@@ -20,9 +20,7 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const [open, setOpen] = useState(false);
-
   const { cart } = useContext(CartContext);
-
   const cartItemCount = cart.length;
 
   return (
@@ -39,9 +37,11 @@ const Header: React.FC<HeaderProps> = () => {
           </CartContainer>
         </Grid>
       </StyledContainer>
-      <DrawerMiniCart open={open} setOpen={setOpen} children={<Checkout />}>
-
-      </DrawerMiniCart>
+      <DrawerMiniCart
+        open={open}
+        setOpen={setOpen}
+        children={<Checkout />}
+      ></DrawerMiniCart>
     </>
   );
 };
