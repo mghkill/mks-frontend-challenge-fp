@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ setSearchText }) => {
             component="form"
             sx={{
               display: "none",
-              "@media (min-width: 726px)": {
+              "@media (min-width: 926px)": {
                 p: "2px 4px",
                 display: "flex",
                 alignItems: "right",
