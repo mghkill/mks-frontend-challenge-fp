@@ -1,8 +1,11 @@
 export default interface Product {
-    id: number;
-    name: string;
-    price: number;
-    photo: string; 
-    description: string;
-    cart: any
-  }
+  id: number;
+  count: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+  createdAt: string;
+  updatedAt: string;
+}

@@ -12,16 +12,21 @@ interface CartContextType {
   removeFromCart: (productSelected: Product) => void;
   useGetProducts: () => Product[];
   clearCart: () => void;
+  updateCart: (product: Product[]) => void;
+  setCart: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
-export const CartContext: Context<CartContextType> = createContext<CartContextType>({
-  cart: [],
-  getCart: () => [],
-  useGetProducts: () => [],
-  addToCart: () => {},
-  removeFromCart: () => {},
-  clearCart: () => {},
-});
+export const CartContext: Context<CartContextType> =
+  createContext<CartContextType>({
+    cart: [],
+    getCart: () => [],
+    useGetProducts: () => [],
+    addToCart: () => {},
+    removeFromCart: () => {},
+    clearCart: () => {},
+    updateCart: () => {},
+    setCart: () => [],
+  });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Product[]>(
@@ -54,13 +59,28 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const outputCart = getCart();
     outputCart.push(productSelected);
     localStorage.setItem(CART_KEY, JSON.stringify(outputCart));
-    setCart(outputCart); 
-};
-
+    setCart(outputCart);
+  };
 
   const removeFromCart = (productSelected: Product): void => {
     const outputCart = getCart();
-    const updatedCart = outputCart.filter((item) => item.id !== productSelected.id);
+    const updatedCart = outputCart.filter(
+      (item) => item.id !== productSelected.id
+    );
+    localStorage.setItem(CART_KEY, JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+
+  const updateCart = (product: Product[]): void => {
+    const outputCart = getCart();
+    let removed = false;
+    const updatedCart = outputCart.filter((item) => {
+      if (!removed && item.id === product[0].id) {
+        removed = true;
+        return false;
+      }
+      return true;
+    });
     localStorage.setItem(CART_KEY, JSON.stringify(updatedCart));
     setCart(updatedCart);
   };
@@ -68,7 +88,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const clearCart = (): void => {
     localStorage.removeItem(CART_KEY);
     setCart(JSON.parse(localStorage.getItem("@Cart:products") || "[]"));
-
   };
 
   return (
@@ -76,11 +95,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         useGetProducts,
         getCart,
         addToCart,
         removeFromCart,
         clearCart,
+        updateCart,
       }}
     >
       {children}

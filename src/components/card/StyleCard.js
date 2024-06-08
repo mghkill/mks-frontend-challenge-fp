@@ -9,12 +9,13 @@ import {
 
 export const StyledCard = styled(Card)`
   width: 218px;
-  height: auto;
+  height: 328px;
   box-shadow: 0px 2px 8px 0px #00000022 !important;
   border-radius: 10px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledCardContent = styled(CardContent)`

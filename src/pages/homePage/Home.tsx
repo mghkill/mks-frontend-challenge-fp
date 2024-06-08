@@ -4,6 +4,7 @@ import Card from "../../components/card/Card.tsx";
 import Product from "../../types/Types.tsx";
 import Header from "../../components/Header/Header.tsx";
 import { CartContext } from "../../stores/productStore/productStore.tsx";
+import { StyledHomeCard, StyledHomeContainer } from "./StyleHome.js";
 
 const Home: React.FC = () => {
   const { useGetProducts } = useContext(CartContext);
@@ -11,14 +12,16 @@ const Home: React.FC = () => {
   const listProducts = useGetProducts();
 
   return (
-    <Grid container spacing={2}>
+    <Grid container>
       <Header />
-      {listProducts &&
-        listProducts.map((e: Product) => (
-          <Grid key={e.id} item xs={12} sm={6} md={4} lg={3}>
-            <Card element={e} />
-          </Grid>
-        ))}
+      <StyledHomeContainer>
+        {listProducts &&
+          listProducts.map((e: Product) => (
+            <StyledHomeCard key={e.id} item xs={12} sm={6} md={4} lg={3}>
+              <Card element={e} />
+            </StyledHomeCard>
+          ))}
+      </StyledHomeContainer>
     </Grid>
   );
 };

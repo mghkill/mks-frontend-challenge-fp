@@ -9,7 +9,11 @@ export const StyledContainer = styled(Grid)`
   display: flex;
   justify-content: space-between;
   align-content: center;
+  cursor: pointer;
   @media (max-width: 600px) {
+    position: fixed;
+    top: 0;
+    z-index: 2;
     height: 48px;
     padding: 0 18px;
   }

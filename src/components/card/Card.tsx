@@ -30,7 +30,7 @@ const getPriceWithoutDecimal = (price: number) => {
 };
 
 const Card: React.FC<CardProps> = ({ element }) => {
-  const { addToCart, removeFromCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const handleProduct = (element: Product) => {
     addToCart(element);
@@ -65,12 +65,6 @@ const Card: React.FC<CardProps> = ({ element }) => {
           <ShoppingBagSVG />
         </Grid>
         COMPRAR
-      </StyledButton>
-      <StyledButton onClick={() => removeFromCart(element)} variant="contained" color="primary">
-        <Grid sx={{ p: 1, pt: 1.6 }}>
-          <ShoppingBagSVG />
-        </Grid>
-        deleteTeste
       </StyledButton>
     </StyledCard>
   );
