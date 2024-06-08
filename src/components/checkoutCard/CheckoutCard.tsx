@@ -11,6 +11,7 @@ import {
   NameStyle,
   PriceTotal,
   StyledCheckoutCardBox,
+  SubmitButtonCart,
   TotalReduce,
 } from "./StyledCheckoutCard.js";
 import Product from "../../types/Types.tsx";
@@ -87,6 +88,7 @@ const CheckoutCard: React.FC = () => {
       <p>Adicione produtos ao seu carrinho para vê-los aqui.</p>
     </Grid>
   );
+
   const calcTotal = (listProductCart: GroupedProduct[]): number => {
     return listProductCart.reduce((acc, item) => {
       const price: number = item.price;
@@ -97,6 +99,14 @@ const CheckoutCard: React.FC = () => {
       }
       return acc + priceNumber * item.count;
     }, 0);
+  };
+
+  const getPriceWithoutDecimal = (price: number) => {
+    const formattedPrice = Number(price)
+      .toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+      .split(",")[0];
+  
+    return formattedPrice;
   };
 
   return (
@@ -120,7 +130,7 @@ const CheckoutCard: React.FC = () => {
                 </ButtonAddRemove>
               </BoxAddRemove>
               <PriceTotal className="description">
-                {"R$" + reducePrice(product)}
+                {getPriceWithoutDecimal(reducePrice(product))}
               </PriceTotal>
             </StyledCheckoutCardBox>
           </Grid>
@@ -130,8 +140,12 @@ const CheckoutCard: React.FC = () => {
       )}
       <TotalReduce>
         <span>Total</span>
-        <span>R${totalOutput}</span>
+        <span>{getPriceWithoutDecimal(totalOutput)}</span>
       </TotalReduce>
+      
+      <SubmitButtonCart>
+        Finalizar Compra
+      </SubmitButtonCart>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const StyledCheckoutCardBox = styled.div`
   width: 90%;
@@ -89,6 +90,14 @@ export const CloseButton = styled.button`
   margin: -8px;
   border: none;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.8);
+  }
 `;
 
 export const TotalReduce = styled.span`
@@ -104,4 +113,27 @@ export const TotalReduce = styled.span`
   flex-direction: row;
   width: 80%;
   left: 50px;
+`;
+
+export const SubmitButtonCart = styled(motion.button)`
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 83px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.8);
+  }
 `;

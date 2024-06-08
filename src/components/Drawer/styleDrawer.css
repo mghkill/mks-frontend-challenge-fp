@@ -21,6 +21,16 @@
   width: 45px;
   height: 45px;
 }
+#drawerCart button.MuiModalClose-root:hover {
+  background-color: #ffffff;
+  color: #000000;
+   
+}
+
+#drawerCart button.MuiModalClose-root svg:hover{
+   
+  color: #000;
+}
 
 #drawerCart button.MuiModalClose-root svg {
   color: #ffffff;

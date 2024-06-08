@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ element }) => {
     addToCart(element);
   };
   return (
-    <StyledCard>
+    <StyledCard onClick={() => handleProduct(element)}>
       <StyledCardMedia
         component="img"
         height="140"
@@ -57,9 +57,8 @@ const Card: React.FC<CardProps> = ({ element }) => {
         {element.description}
       </StyledTypographyDescription>
       <StyledButton
-        whileHover={{ y: -5 }}
+        whileHover={{ y: -1, color: "#6495ED" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        onClick={() => handleProduct(element)}
         variant="contained"
         color="primary"
       >

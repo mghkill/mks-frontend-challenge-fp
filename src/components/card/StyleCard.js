@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import {
-  Card,
+  
   CardContent,
   CardMedia,
   Typography,
   Button,
 } from "@mui/material";
 
-export const StyledCard = styled(Card)`
+export const StyledCard = styled(motion.div)`
   width: 218px;
   height: 328px;
   box-shadow: 0px 2px 8px 0px #00000022 !important;
@@ -17,6 +17,12 @@ export const StyledCard = styled(Card)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05); /* Aproxima o card em 5% */
+  }
 `;
 
 export const StyledCardContent = styled(CardContent)`
