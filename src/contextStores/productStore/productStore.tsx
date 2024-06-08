@@ -1,9 +1,7 @@
-// productStore.tsx
-
 import { createContext, Context, ReactNode, useState } from "react";
 import { useQuery } from "react-query";
 import api from "../../services/api.ts";
-import Product from "../../types/Types";
+import Product from "../../types/Types.tsx";
 
 interface CartContextType {
   cart: Product[];

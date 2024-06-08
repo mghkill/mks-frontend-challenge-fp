@@ -17,11 +17,11 @@ export const StyledCard = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+  transition: transform 0.3s ease;  
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05); /* Aproxima o card em 5% */
+    transform: scale(1.05);  
   }
 `;
 

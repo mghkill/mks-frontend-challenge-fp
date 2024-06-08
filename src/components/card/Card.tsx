@@ -10,7 +10,8 @@ import {
   StyledTypographyDescription,
   StyledSpanPrice,
 } from "./StyleCard";
-import { CartContext } from "../../stores/productStore/productStore.tsx";
+import { CartContext } from "../../contextStores/productStore/productStore.tsx";
+
 
 // @ts-ignore
 import { ReactComponent as ShoppingBagSVG } from "../../assets/img/shoppingBag.svg";

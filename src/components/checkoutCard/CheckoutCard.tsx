@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../stores/productStore/productStore.tsx";
+import { CartContext } from "../../contextStores/productStore/productStore.tsx";
+
 import CircularProgress from "@mui/material/CircularProgress";
 //@ts-ignore
 import { ReactComponent as EmptyCartIcon } from "../../assets/img/cartWhite.svg";
@@ -33,10 +34,6 @@ const CheckoutCard: React.FC = () => {
     setTotalOutput(total);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
-
-  useEffect(() => {
-    console.log("totalOutput", totalOutput);
-  }, [totalOutput]);
 
   const reducePrice = (product: Product) => {
     const priceNumber: number = product.price;

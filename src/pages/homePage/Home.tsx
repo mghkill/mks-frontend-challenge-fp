@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import Card from "../../components/card/Card.tsx";
 import Product from "../../types/Types.tsx";
 import Header from "../../components/Header/Header.tsx";
-import { CartContext } from "../../stores/productStore/productStore.tsx";
+import { CartContext } from "../../contextStores/productStore/productStore.tsx";
 import { StyledHomeCard, StyledHomeContainer } from "./StyleHome.js";
 
 const Home: React.FC = () => {

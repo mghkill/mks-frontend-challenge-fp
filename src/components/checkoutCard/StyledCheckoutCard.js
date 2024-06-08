@@ -72,12 +72,13 @@ export const PriceTotal = styled.p`
 `;
 
 export const BoxAddRemove = styled.div`
-  border: solid 1px black;
+  border: solid 1px #00000024;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50px;
   margin-right: 10px;
+  border-radius: 2px;
 `;
 
 export const CloseButton = styled.button`

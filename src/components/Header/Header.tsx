@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Grid from "@mui/material/Grid";
-import { CartContext } from "../../stores/productStore/productStore.tsx";
+ 
 import SearchIcon from "@mui/icons-material/Search";
 // @ts-ignore
 import { ReactComponent as CartSvg } from "../../assets/img/cart.svg";
@@ -17,6 +17,7 @@ import {
 } from "./StyleHeader";
 import Checkout from "../checkout/Checkout.tsx";
 import { Divider, IconButton } from "@mui/joy";
+import { CartContext } from "../../contextStores/productStore/productStore.tsx";
 
 interface HeaderProps {
   setSearchText: React.Dispatch<React.SetStateAction<string>>;
