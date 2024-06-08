@@ -124,6 +124,7 @@ export const SubmitButtonCart = styled(motion.button)`
   bottom: 0;
   left: 0;
   width: 100%;
+  overflow-x: hidden;
   height: 83px;
   font-size: 28px;
   font-weight: 700;

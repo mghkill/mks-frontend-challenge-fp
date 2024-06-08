@@ -9,6 +9,7 @@ export const StyledContainer = styled(Grid)`
   display: flex;
   justify-content: space-between;
   align-content: center;
+  align-items: center;
   @media (max-width: 600px) {
     position: fixed;
     top: 0;
@@ -32,10 +33,10 @@ export const LogoContainer = styled.div`
 `;
 
 export const SystemsTypography = styled.div`
-  font-family: "Montserrat", sans-serif ;
-  font-size: 16px ;
-  font-weight: 300 ;
-  line-height: 19px ;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
   text-align: left;
   padding-left: 8px;
   padding-top: 6px;
@@ -56,5 +57,11 @@ export const CartContainer = styled.div`
     height: 24px !important;
     padding: 2px;
     font-size: 12px !important;
+  }
+`;
+export const SearchHomePage = styled.div`
+  width: 400px, 
+  @media (min-width: 726px) {
+    display: block !important;
   }
 `;

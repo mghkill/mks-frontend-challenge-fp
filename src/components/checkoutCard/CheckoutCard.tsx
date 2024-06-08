@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../stores/productStore/productStore.tsx";
+import CircularProgress from "@mui/material/CircularProgress";
 //@ts-ignore
 import { ReactComponent as EmptyCartIcon } from "../../assets/img/cartWhite.svg";
 
@@ -23,6 +24,7 @@ interface GroupedProduct extends Omit<Product, "count"> {
 
 const CheckoutCard: React.FC = () => {
   const [totalOutput, setTotalOutput] = useState(0);
+  const [submit] = useState(false);
   const { updateCart, addToCart, removeFromCart, cart } =
     useContext(CartContext);
 
@@ -105,7 +107,7 @@ const CheckoutCard: React.FC = () => {
     const formattedPrice = Number(price)
       .toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
       .split(",")[0];
-  
+
     return formattedPrice;
   };
 
@@ -142,10 +144,13 @@ const CheckoutCard: React.FC = () => {
         <span>Total</span>
         <span>{getPriceWithoutDecimal(totalOutput)}</span>
       </TotalReduce>
-      
-      <SubmitButtonCart>
-        Finalizar Compra
-      </SubmitButtonCart>
+      {!submit ? (
+        <SubmitButtonCart>Finalizar Compra</SubmitButtonCart>
+      ) : (
+        <SubmitButtonCart>
+          <CircularProgress />
+        </SubmitButtonCart>
+      )}
     </>
   );
 };
