@@ -1,4 +1,4 @@
-# Teste Prático - Desenvolvedor(a) Front-end
+# Teste Prático - Desenvolvedor Front-end
 
 ## Tecnologias Utilizadas
 
