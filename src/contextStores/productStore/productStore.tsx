@@ -1,6 +1,6 @@
 import { createContext, Context, ReactNode, useState } from "react";
-/* import { useQuery } from "react-query";
-import api from "../../services/api.ts"; */
+import { useQuery } from "react-query";
+import api from "../../services/api.ts";
 import Product from "../../types/Types.tsx";
 import { PRODUCTS_MOCK } from "./MKSmockReqBug.js";
 
@@ -36,11 +36,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const useGetProducts = (): Product[] => {
     const dataMockBug: any = PRODUCTS_MOCK.products;
-    return dataMockBug;
 
     /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
 
-    /* 
     const { data } = useQuery<Product[], Error>("products", async () => {
       const response = await fetch(
         `${api}products?page=1&rows=8&sortBy=id&orderBy=DESC`
@@ -51,10 +49,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const data = await response.json();
 
       return data.products;
-    });  
-    
-    return data || [];
-   */
+    });
+
+    return data || dataMockBug;
 
     /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
   };
