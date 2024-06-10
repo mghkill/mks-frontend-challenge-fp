@@ -35,14 +35,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const CART_KEY = "@Cart:products";
 
   const useGetProducts = (): Product[] => {
-    const dataMockBug: any = PRODUCTS_MOCK.products
-    return dataMockBug
+    const dataMockBug: any = PRODUCTS_MOCK.products;
+    return dataMockBug;
 
     /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
 
-    /* const { data } = useQuery<Product[], Error>("products", async () => {
+    /* 
+    const { data } = useQuery<Product[], Error>("products", async () => {
       const response = await fetch(
-        `${api}products?page=1&rows=5&sortBy=id&orderBy=DESC`
+        `${api}products?page=1&rows=8&sortBy=id&orderBy=DESC`
       );
       if (!response.ok) {
         throw new Error("Falha ao carregar os produtos");
@@ -50,15 +51,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const data = await response.json();
 
       return data.products;
-    }); */
+    });  
     
-    /*  if (data) {    
-      return data || [];
-    } */
+    return data || [];
+   */
 
     /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
-
-   
   };
 
   const getCart = (): Product[] => {
