@@ -1,7 +1,8 @@
 import { createContext, Context, ReactNode, useState } from "react";
-import { useQuery } from "react-query";
-import api from "../../services/api.ts";
+/* import { useQuery } from "react-query";
+import api from "../../services/api.ts"; */
 import Product from "../../types/Types.tsx";
+import { PRODUCTS_MOCK } from "./MKSmockReqBug.js";
 
 interface CartContextType {
   cart: Product[];
@@ -34,7 +35,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const CART_KEY = "@Cart:products";
 
   const useGetProducts = (): Product[] => {
-    const { data } = useQuery<Product[], Error>("products", async () => {
+    const dataMockBug: any = PRODUCTS_MOCK.products
+    return dataMockBug
+
+    /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
+
+    /* const { data } = useQuery<Product[], Error>("products", async () => {
       const response = await fetch(
         `${api}products?page=1&rows=5&sortBy=id&orderBy=DESC`
       );
@@ -42,10 +48,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         throw new Error("Falha ao carregar os produtos");
       }
       const data = await response.json();
-      return data.products;
-    });
 
-    return data || [];
+      return data.products;
+    }); */
+    
+    /*  if (data) {    
+      return data || [];
+    } */
+
+    /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
+
+   
   };
 
   const getCart = (): Product[] => {
