@@ -2,7 +2,6 @@ import { createContext, Context, ReactNode, useState } from "react";
 import { useQuery } from "react-query";
 import api from "../../services/api.ts";
 import Product from "../../types/Types.tsx";
-import { PRODUCTS_MOCK } from "./MKSmockReqBug.js";
 
 interface CartContextType {
   cart: Product[];
@@ -35,9 +34,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const CART_KEY = "@Cart:products";
 
   const useGetProducts = (): Product[] => {
-    const dataMockBug: any = PRODUCTS_MOCK.products;
 
-    /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
 
     const { data } = useQuery<Product[], Error>("products", async () => {
       const response = await fetch(
@@ -51,9 +48,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       return data.products;
     });
 
-    return data || dataMockBug;
+    return data || [];
 
-    /* =================== A REQUISIÇÃO GET PAROU DE FUNCIONAR DAÍ FIZ UM MOCK POR ENQUANTO ======================== */
   };
 
   const getCart = (): Product[] => {
