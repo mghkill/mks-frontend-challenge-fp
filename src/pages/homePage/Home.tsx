@@ -21,7 +21,7 @@ const Home: React.FC = () => {
   return (
     <Grid container>
       <Header setSearchText={setSearchText} />
-      <StyledHomeContainer>
+      <StyledHomeContainer >
         {displayedOptions &&
           displayedOptions.map((e: Product) => (
             <StyledHomeCard key={e.id} item xs={12} sm={6} md={4} lg={3}>
