@@ -2,6 +2,7 @@ import { createContext, Context, ReactNode, useState } from "react";
 import { useQuery } from "react-query";
 import api from "../../services/api.ts";
 import Product from "../../types/Types.tsx";
+import { PRODUCTS_MOCK } from "./mockProducts.js";
 
 interface CartContextType {
   cart: Product[];
@@ -34,8 +35,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const CART_KEY = "@Cart:products";
 
   const useGetProducts = (): Product[] => {
-
-
+    const dataMockBug: any = PRODUCTS_MOCK.products;
     const { data } = useQuery<Product[], Error>("products", async () => {
       const response = await fetch(
         `${api}products?page=1&rows=8&sortBy=id&orderBy=DESC`
@@ -44,12 +44,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         throw new Error("Falha ao carregar os produtos");
       }
       const data = await response.json();
-
       return data.products;
     });
-
-    return data || [];
-
+    return data || dataMockBug;
   };
 
   const getCart = (): Product[] => {
